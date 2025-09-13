@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 5th Monthsary ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    .player {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Happy 5th Monthsary, My Love 💕</h1>
+    <p>Here are some songs that remind me of us 🎶</p>
+    <div class="player">
+      <audio id="music" controls autoplay loop>
+        <source src="song1.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+  </div>
+  
+  <script>
+    // Playlist of songs
+    const songs = ["song1.mp3", "song2.mp3", "song3.mp3"];
+    let index = 0;
+    const audio = document.getElementById("music");
+
+
+    audio.addEventListener("ended", () => {
+      index = (index + 1) % songs.length;
+      audio.src = songs[index];
+      audio.play();
+    });
+  </script>
+</body>
+</html>
